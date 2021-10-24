@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { Country } from '../../interfaces/country.interface';
 import { CountryService } from '../../services/country.service';
 
 @Component({
@@ -11,20 +12,24 @@ import { CountryService } from '../../services/country.service';
 export class ByCountryComponent {
   searchTerm: string = '';
   queryError: boolean = false;
+  countries: Country[] = [];
 
   constructor(private countryService: CountryService) { }
 
-  search() {
+  search(searchTerm: string) {
+    this.searchTerm = searchTerm;
     this.queryError = false;
     console.log(this.searchTerm);
 
     this.countryService.searchCountry(this.searchTerm)  // forma de realizar la consulta a traves de un Observable
-    .subscribe(resp => {
-      console.log(resp);
+    .subscribe(countries => {
+      console.log(countries);
+      this.countries = countries;
     }, (err) => {
       this.queryError = true;
       console.log('Error');
       console.info(err);
+      this.countries = [];
     });
   }
 

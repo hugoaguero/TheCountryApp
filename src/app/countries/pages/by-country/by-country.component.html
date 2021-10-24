@@ -2,14 +2,7 @@
 <hr>
 <div class="row">
     <div class="col">
-        <form (ngSubmit)="search()"
-            autocomplete="off">
-            <input type="text"
-                name="searchTerm"
-                class="form-control"
-                [(ngModel)]="searchTerm"
-                placeholder="Search country..."> 
-        </form>
+        <app-country-input (onEnter)="search($event)"></app-country-input>
     </div>
 </div>
 <hr>
@@ -17,29 +10,9 @@
     class="alert alert-danger">
     Nothing found for {{searchTerm}}! :(
 </div>
-<div class="row">
+<div *ngIf="countries.length > 0"
+    class="row">
     <div class="col">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th> # </th>
-                    <th> Flag </th>
-                    <th> Name </th>
-                    <th> Population </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>flag</td>
-                    <td>name</td>
-                    <td>123456789</td>
-                    <td>
-                        a
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <app-countries-table [countries]="countries"></app-countries-table>
     </div>
 </div>
