@@ -13,8 +13,9 @@
     </div>
 </div>
 <hr>
-<div class="alert alert-danger">
-    Nothing found! :(
+<div *ngIf="queryError"
+    class="alert alert-danger">
+    Nothing found for {{searchTerm}}! :(
 </div>
 <div class="row">
     <div class="col">
