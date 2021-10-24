@@ -1,16 +1,8 @@
-<div class="row conteiner mt-4">
+<div class="row container mt-4">
     <div class="col-3">
-        <h2>Searches</h2>
-        <hr>
-        <ul class="list-group">
-            <li class="list-group-item">By region</li>
-            <li class="list-group-item">By country</li>
-            <li class="list-group-item">By country</li>
-        </ul>
+        <app-sidebar></app-sidebar>
     </div>
     <div class="col">
-        <h2>By Capital</h2>
-        <hr>
-        <app-by-capital></app-by-capital>
+        <router-outlet></router-outlet>
     </div>
 </div>
