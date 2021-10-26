@@ -22,7 +22,7 @@ const routes: Routes = [    // para la creación de las vistas y sus rutas y la 
         component: ByCapitalComponent,
     },
     {
-        path: 'country/:countryCode',
+        path: 'country/:id',
         component: SeeCountryComponent
     },
     {
@@ -33,7 +33,7 @@ const routes: Routes = [    // para la creación de las vistas y sus rutas y la 
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot( routes )
     ],
     exports: [
         RouterModule

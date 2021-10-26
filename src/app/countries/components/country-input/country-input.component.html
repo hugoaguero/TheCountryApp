@@ -4,5 +4,6 @@
         name="searchTerm"
         class="form-control"
         [(ngModel)]="searchTerm"
-        placeholder="Search country...">
+        (input)="keyPressed($event)"
+        [placeholder]="placeholder">
 </form>

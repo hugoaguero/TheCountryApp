@@ -10,11 +10,21 @@ import { Country } from '../interfaces/country.interface';
 export class CountryService {
   private apiUrl: string = 'https://restcountries.com/v3.1';
 
-  constructor(private http: HttpClient) { }
+  constructor( private http: HttpClient ) { }
 
-  searchCountry(term: string): Observable<Country[]> {
-    const url = `${this.apiUrl}/name/${term}`;
-    return this.http.get<Country[]>(url)
+  searchCountry( term: string ): Observable<Country[]> {
+    const url = `${ this.apiUrl }/name/${ term }`;
+    return this.http.get<Country[]>( url )
+  }
+
+  searchCapital( term: string ): Observable<Country[]> {
+    const url = `${ this.apiUrl }/capital/${ term }`;
+    return this.http.get<Country[]>( url )
+  }
+
+  getCountryByAlpha( term: string ): Observable<Country> {
+    const url = `${ this.apiUrl }/alpha/${ term }`;
+    return this.http.get<Country>( url )
   }
 }
 

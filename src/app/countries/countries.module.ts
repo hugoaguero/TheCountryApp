@@ -11,9 +11,6 @@ import { CountriesTableComponent } from './components/countries-table/countries-
 import { CountryInputComponent } from './components/country-input/country-input.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     ByCapitalComponent,
