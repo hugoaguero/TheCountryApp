@@ -15,11 +15,11 @@ const routes: Routes = [    // para la creación de las vistas y sus rutas y la 
     },
     {
         path: 'region',
-        component: ByRegionComponent,
+        component: ByRegionComponent
     },
     {
         path: 'capital',
-        component: ByCapitalComponent,
+        component: ByCapitalComponent
     },
     {
         path: 'country/:id',
@@ -27,7 +27,7 @@ const routes: Routes = [    // para la creación de las vistas y sus rutas y la 
     },
     {
         path: '**',
-        redirectTo: '', // redirecciona al path. Se puede crear otro component para que muestre un 404.
+        redirectTo: ''  // redirecciona al path. Se puede crear otro component para que muestre un 404.
     }
 ];
 

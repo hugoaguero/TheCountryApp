@@ -9,7 +9,7 @@ import { Country } from '../../interfaces/country.interface';
   ]
 })
 export class CountriesTableComponent implements OnInit {
-  @Input( 'countries' ) countries: Country[] = [];
+  @Input() countries: Country[] = [];
 
   constructor() { }
 

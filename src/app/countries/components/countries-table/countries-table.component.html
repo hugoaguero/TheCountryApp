@@ -4,22 +4,24 @@
             <th> # </th>
             <th> Flag </th>
             <th> Name </th>
+            <th> Capital </th>
             <th> Area </th>
             <th> Population </th>
             <th> Timezone </th>
-            <th></th>
+            <th> See more...</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let country of countries; let i=index">
             <td>{{ i+1 }}</td>
-            <td><img class="small-flag" [src]="country.flags.png"></td>
-            <td>{{ country.capital }}, {{ country.name.common }}</td>
+            <td><img class="small-flag" [src]="country.flag"></td>
+            <td>{{ country.name }}</td>
+            <td>{{ country.capital }}</td>
             <td>{{ country.area | number }}</td>
             <td>{{ country.population | number }}</td>
             <td>{{ country.timezones }}</td>
             <td>
-                <a [routerLink]="['/country', country.cca2]">See...</a>
+                <a [routerLink]="['/country', country.alpha2Code]">See...</a>
             </td>
         </tr>
     </tbody>

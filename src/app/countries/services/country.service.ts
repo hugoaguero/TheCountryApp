@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Country } from '../interfaces/country.interface';
 
@@ -8,7 +8,7 @@ import { Country } from '../interfaces/country.interface';
   providedIn: 'root'
 })
 export class CountryService {
-  private apiUrl: string = 'https://restcountries.com/v3.1';
+  private apiUrl: string = 'https://restcountries.com/v2';
 
   constructor( private http: HttpClient ) { }
 
@@ -22,8 +22,8 @@ export class CountryService {
     return this.http.get<Country[]>( url )
   }
 
-  getCountryByAlpha( term: string ): Observable<Country> {
-    const url = `${ this.apiUrl }/alpha/${ term }`;
+  getCountryByAlpha( id: string ): Observable<Country> {
+    const url = `${ this.apiUrl }/alpha/${ id }`;
     return this.http.get<Country>( url )
   }
 }
