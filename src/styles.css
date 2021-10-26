@@ -1,7 +1,11 @@
 .small-flag {
-    width: 50px;
+    width: 70px;
 }
 
 .mr-1 {
     margin-right: 5px;
+}
+
+img {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.500);
 }

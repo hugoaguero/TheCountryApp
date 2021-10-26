@@ -14,9 +14,9 @@ export class ByCountryComponent {
   queryError: boolean = false;
   countries: Country[] = [];
 
-  constructor(private countryService: CountryService) { }
+  constructor( private countryService: CountryService ) { }
 
-  search(searchTerm: string) {
+  search( searchTerm: string ) {
     this.searchTerm = searchTerm;
     this.queryError = false;
     console.log( this.searchTerm );

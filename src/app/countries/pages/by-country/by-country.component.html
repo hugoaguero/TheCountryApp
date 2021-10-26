@@ -1,16 +1,18 @@
-<h2>By Country</h2>
-<hr>
+<div class="animate__animated animate__fadeIn animate__slow">
+    <h2>By Country</h2>
+    <hr>
 
-<div class="row">
-    <div class="col">
-        <app-country-input
-            (onEnter)="search( $event )"
-            (onDebounce)="suggestion( $event )"
-            placeholder="Search country...">
-        </app-country-input>
+    <div class="row">
+        <div class="col">
+            <app-country-input
+                (onEnter)="search( $event )"
+                (onDebounce)="suggestion( $event )"
+                placeholder="Search country...">
+            </app-country-input>
+        </div>
     </div>
+    <hr>
 </div>
-<hr>
 
 <div *ngIf="queryError"
     class="alert alert-danger">

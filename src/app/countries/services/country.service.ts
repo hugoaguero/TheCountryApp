@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -10,21 +10,30 @@ import { Country } from '../interfaces/country.interface';
 export class CountryService {
   private apiUrl: string = 'https://restcountries.com/v2';
 
+  get httpParams() {
+    return new HttpParams().set( 'fields', 'flag,name,capital,area,population,timezones,alpha2Code' ); // van separados por coma "," los valores
+  }
+
   constructor( private http: HttpClient ) { }
 
   searchCountry( term: string ): Observable<Country[]> {
     const url = `${ this.apiUrl }/name/${ term }`;
-    return this.http.get<Country[]>( url )
+    return this.http.get<Country[]>( url, { params: this.httpParams } )
   }
 
   searchCapital( term: string ): Observable<Country[]> {
     const url = `${ this.apiUrl }/capital/${ term }`;
-    return this.http.get<Country[]>( url )
+    return this.http.get<Country[]>( url, { params: this.httpParams } )
   }
 
   getCountryByAlpha( id: string ): Observable<Country> {
     const url = `${ this.apiUrl }/alpha/${ id }`;
     return this.http.get<Country>( url )
+  }
+
+  searchRegion( region: string ): Observable<Country[]> {
+    const url = `${ this.apiUrl }/region/${ region }`;
+    return this.http.get<Country[]>( url, { params: this.httpParams } );
   }
 }
 
