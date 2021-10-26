@@ -11,6 +11,17 @@
             </app-country-input>
         </div>
     </div>
+
+    <ul class="list-group">
+        <li *ngFor="let country of suggestionCountry"
+            class="list-group-item list list-group-item-action">
+            <a class="nav-link"
+                [routerLink]="['/country', country.alpha2Code]">
+            {{ country.name }}
+            </a>
+        </li>
+    </ul>
+
     <hr>
 </div>
 
